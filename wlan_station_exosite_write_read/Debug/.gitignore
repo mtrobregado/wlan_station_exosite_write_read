@@ -1,0 +1,9 @@
+/board
+/cli_uart
+/makefile
+/objects.mk
+/simplelink
+/sources.mk
+/spi
+/subdir_rules.mk
+/subdir_vars.mk
