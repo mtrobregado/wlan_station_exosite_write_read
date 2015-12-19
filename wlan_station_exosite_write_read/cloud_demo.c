@@ -9,7 +9,7 @@
 // Sends switch press count to Exosite Cloud
 // on-board led on-off, from Exosite Dashboard Switches
 //
-// Device Setup: Tiva Connected Launchpad + CC3100 Booster pack + Sensor Hub Booster Pack * */
+// Device Setup: Tiva Connected Launchpad + CC3100 Booster pack + Sensor Hub Booster Pack 
 //
 //*****************************************************************************
 
