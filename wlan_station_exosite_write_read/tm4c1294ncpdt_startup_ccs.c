@@ -27,7 +27,7 @@
 //                        to Exosite using TI SimpleLink CC3100. It also reads Exosite portal dashboard,
 //                        if the dasboard switches has been pressed. If dashboard switch has been pressed
 //                        a Tiva Connected Launchpad on-board led will be turned on. Two Exosite portal
-//                        dashboards are available to turn on two on-board leds. *
+//                        dashboard switches are available to turn on two on-board leds. *
 // Device Setup: Tiva Connected Launchpad + CC3100 Booster pack + Sensor Hub Booster Pack
 //
 //*****************************************************************************
