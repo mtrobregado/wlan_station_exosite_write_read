@@ -60,7 +60,7 @@ static uint8_t exosite_checkResponse(char * response, const char * code);
 #define STR_MODEL   "&model="
 #define STR_SN      "&sn="
 
-static char cikBuffer[CIK_LENGTH] = "27bf04dad73090a9b2cadb6239783cdfa123a650";
+static char cikBuffer[CIK_LENGTH] = "YOUR_CIK_HERE";
 static char vendorBuffer[MAX_VENDOR_LENGTH];
 static char modelBuffer[MAX_MODEL_LENGTH];
 static char uuidBuffer[MAX_UUID_LENGTH];
