@@ -24,15 +24,6 @@ Install CC3100 SDK, and Tivaware at your PC.
 SSID_NAME, SEC_TYPE, PASSKEY should be updated as per AP details at sl_common.h. 
 File Location: C:\ti\CC3100SDK_1.1.0\cc3100-sdk\examples\common\sl_common.h 
 
-/*
- * Values for below macros shall be modified per the access-point's (AP) properties
- * SimpleLink device will connect to following AP when the application is executed
- */
-#define SSID_NAME       "jefwifi"         /* Access point name to connect to. */
-#define SEC_TYPE        SL_SEC_TYPE_WPA    /* Security type of the Access piont */
-#define PASSKEY         "abcde12345"                  /* Password in case of secure AP */
-#define PASSKEY_LEN     pal_Strlen(PASSKEY)  /* Password length in case of secure AP */
-
 Set your CIK at exosite.c
 
 static char cikBuffer[CIK_LENGTH] = "YOUR EXOSITE CIK HERE";
