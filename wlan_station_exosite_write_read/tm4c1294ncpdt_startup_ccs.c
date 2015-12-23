@@ -23,7 +23,7 @@
 // Write and Read data to Exosite Cloud using Tiva Connected Launchpad + CC3100 BP + Sensor Hub BP,
 // Connects to AP through WiFi
 //
-// Maker/Author - Markel T. Robregado *
+// Maker/Author - Markel T. Robregado 
 // Modification Details : Write and read data to Exosite.
 // Sends Temperature data from TMP006 sensor to Exosite Cloud
 // Sends switch press count to Exosite Cloud
