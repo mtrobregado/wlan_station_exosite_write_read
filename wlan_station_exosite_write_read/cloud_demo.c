@@ -26,9 +26,7 @@
 #include "driverlib/rom_map.h"
 #include "driverlib/sysctl.h"
 #include "drivers/pinout.h"
-#include "driverlib/uart.h"
 #include "utils/uartstdio.h"
-#include "drivers/pinout.h"
 #include "sensorlib/i2cm_drv.h"
 #include "sensorlib/tmp006.h"
 
