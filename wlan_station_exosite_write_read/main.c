@@ -565,7 +565,7 @@ int main(int argc, char** argv)
 	ROM_IntEnable(INT_GPIOH);
 
 	//
-	// Configure the two 32-bit periodic timers.
+	// Configure Timer 1 10 ms 32-bit periodic timers.
 	//
 	ROM_TimerConfigure(TIMER1_BASE, TIMER_CFG_PERIODIC);
 	TimerIntRegister(TIMER1_BASE, TIMER_A, Timer1BaseIntHandler);
