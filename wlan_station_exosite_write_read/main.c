@@ -76,7 +76,6 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/timer.h"
 #include "driverlib/uart.h"
-#include "driverlib/fpu.h"
 #include "utils/uartstdio.h"
 #include "drivers/buttons.h"
 #include "sensorlib/hw_tmp006.h"
