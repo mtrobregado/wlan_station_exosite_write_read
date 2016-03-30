@@ -18,7 +18,7 @@ Import wlan_station_exosite_write_read to your CCS workspace. Set correct CCS In
 as needed. If any problem doing this, ask help at TI E2E Code Composer Studio Forum. I recommend use the latest CCS 
 Version.
 
-Install CC3100 SDK, and Tivaware at your PC.
+Install CC3100 SDK, and Tivaware at your PC. AT CCS Project Properties, set memory system stack size to 4096.
 
 
 SSID_NAME, SEC_TYPE, PASSKEY should be updated as per AP details at sl_common.h. 
