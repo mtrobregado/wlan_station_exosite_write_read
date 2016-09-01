@@ -522,8 +522,8 @@ int main(int argc, char** argv)
     //
     PinoutSet(false, false);
 
-	ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOH); // TMP006 DRDY interrupt
-	ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C7);  // I2C7 BP1
+    ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOH); // TMP006 DRDY interrupt
+    ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C7);  // I2C7 BP1
     ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
     ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
 
@@ -537,49 +537,49 @@ int main(int argc, char** argv)
     //
     UARTStdioConfig(0, 115200, ui32SysClock);
 
-	displayBanner();
+    displayBanner();
 
-	//
-	// Configure the pin muxing for I2C7 functions on port D0 and D1.
-	// This step is not necessary if your part does not support pin muxing.
-	//
-	ROM_GPIOPinConfigure(GPIO_PD0_I2C7SCL);
-	ROM_GPIOPinConfigure(GPIO_PD1_I2C7SDA);
+    //
+    // Configure the pin muxing for I2C7 functions on port D0 and D1.
+    // This step is not necessary if your part does not support pin muxing.
+    //
+    ROM_GPIOPinConfigure(GPIO_PD0_I2C7SCL);
+    ROM_GPIOPinConfigure(GPIO_PD1_I2C7SDA);
 
-	//
-	// Select the I2C function for these pins.  This function will also
-	// configure the GPIO pins pins for I2C operation, setting them to
-	// open-drain operation with weak pull-ups.  Consult the data sheet
-	// to see which functions are allocated per pin.
-	//
-	GPIOPinTypeI2CSCL(GPIO_PORTD_BASE, GPIO_PIN_0);
-	ROM_GPIOPinTypeI2C(GPIO_PORTD_BASE, GPIO_PIN_1);
+    //
+    // Select the I2C function for these pins.  This function will also
+    // configure the GPIO pins pins for I2C operation, setting them to
+    // open-drain operation with weak pull-ups.  Consult the data sheet
+    // to see which functions are allocated per pin.
+    //
+    GPIOPinTypeI2CSCL(GPIO_PORTD_BASE, GPIO_PIN_0);
+    ROM_GPIOPinTypeI2C(GPIO_PORTD_BASE, GPIO_PIN_1);
 
-	//
-	// Configure and Enable the GPIO interrupt. Used for DRDY from the TMP006
-	//
-	ROM_GPIOPinTypeGPIOInput(GPIO_PORTH_BASE, GPIO_PIN_2);
-	GPIOIntEnable(GPIO_PORTH_BASE, GPIO_PIN_2);
-	ROM_GPIOIntTypeSet(GPIO_PORTH_BASE, GPIO_PIN_2, GPIO_FALLING_EDGE);
-	ROM_IntEnable(INT_GPIOH);
+    //
+    // Configure and Enable the GPIO interrupt. Used for DRDY from the TMP006
+    //
+    ROM_GPIOPinTypeGPIOInput(GPIO_PORTH_BASE, GPIO_PIN_2);
+    GPIOIntEnable(GPIO_PORTH_BASE, GPIO_PIN_2);
+    ROM_GPIOIntTypeSet(GPIO_PORTH_BASE, GPIO_PIN_2, GPIO_FALLING_EDGE);
+    ROM_IntEnable(INT_GPIOH);
 
-	//
-	// Configure Timer 1 10 ms 32-bit periodic timers.
-	//
-	ROM_TimerConfigure(TIMER1_BASE, TIMER_CFG_PERIODIC);
-	TimerIntRegister(TIMER1_BASE, TIMER_A, Timer1BaseIntHandler);
-	ROM_TimerLoadSet(TIMER1_BASE, TIMER_A, ui32SysClock / (100 * 3)); // 10 ms timer button debouncing
+    //
+    // Configure Timer 1 10 ms 32-bit periodic timers.
+    //
+    ROM_TimerConfigure(TIMER1_BASE, TIMER_CFG_PERIODIC);
+    TimerIntRegister(TIMER1_BASE, TIMER_A, Timer1BaseIntHandler);
+    ROM_TimerLoadSet(TIMER1_BASE, TIMER_A, ui32SysClock / (100 * 3)); // 10 ms timer button debouncing
 
-	//
-	// Setup the interrupts for the timer timeouts.
-	//
-	ROM_IntEnable(INT_TIMER1A);
-	ROM_TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
+    //
+    // Setup the interrupts for the timer timeouts.
+    //
+    ROM_IntEnable(INT_TIMER1A);
+    ROM_TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
 
-	//
-	// Enable the timers.
-	//
-	ROM_TimerEnable(TIMER1_BASE, TIMER_A);
+    //
+    // Enable the timers.
+    //
+    ROM_TimerEnable(TIMER1_BASE, TIMER_A);
 
     //
     // Initialize I2C peripheral.
