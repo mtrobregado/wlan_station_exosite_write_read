@@ -219,8 +219,8 @@ void Report_Sensors(void)
 	char post_str[200];
 	int post_len = 0;
 	float fAmbient, fObject;
-    int_fast32_t i32IntegerPart;
-    int_fast32_t i32FractionPart;
+        int_fast32_t i32IntegerPart;
+        int_fast32_t i32FractionPart;
 
 	//
 	// Put the processor to sleep while we wait for the TMP006 to
